@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Stack.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -13,6 +14,16 @@ void PrintEmpty(Stack<D> stack)
         cout << "Стек пустой" << endl;
     } else {
         cout << "Стек не пустой" << endl;
+    }
+}
+
+template<typename D>
+void PrintEmptyQ (Queue<D> queue)
+{
+    if (queue.isEmpty()) {
+        cout << "Очередь пуста" << endl;
+    } else {
+        cout << "Очередь есть" << endl;
     }
 }
 
