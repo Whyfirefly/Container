@@ -21,25 +21,27 @@ public:
     }
 
     //добавление элементов в очередь
-    void PushQ(T value)
+    void Push(T value)
     {
         container.push_back(value);
     }
 
     //удаление первого элемента из очереди (первый пришел->первый ушёл) - не сработало
-    T Remove() {
+    T Pop() {
         if (isEmpty()) {
             throw Exception::Bottom;
         } else {
             //container.erase(container.begin() + index);
-            container.erase(&container[1]);
+            int temp = container.erase(&container[0]);
+            return temp;
         }
     }
 
-    T FetchQ() {
+    T Fetch() {
         while (!isEmpty()) {
             // считываем данные , начиная с первого элемента очереди
-            auto line = move(container.front());
+            int line = move(container.front());
+            return line;
         }
     }
 
